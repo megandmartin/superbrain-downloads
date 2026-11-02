@@ -1,0 +1,84 @@
+name: Preview bug report
+description: Report an installation problem or a reproducible issue in the public desktop preview.
+title: "[Preview bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve SuperBrain. First check the [preview limits](https://github.com/megandmartin/superbrain-downloads/blob/main/docs/preview-status.md).
+
+        This report will be public. Use fictional examples and redact screenshots. Never attach a workspace database, full data folder, credentials or private company information.
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Before submitting
+      options:
+        - label: I checked this report and its attachments for company data, personal information and credentials.
+          required: true
+        - label: I read the known preview limits and searched existing issues.
+          required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Apple Silicon Mac
+        - Windows x64 (Intel/AMD)
+        - Intel Mac
+        - Windows ARM
+        - Another platform
+    validations:
+      required: true
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system version
+      placeholder: "For example: macOS 15.6 or Windows 11 24H2"
+    validations:
+      required: true
+  - type: input
+    id: app-version
+    attributes:
+      label: App version or installer filename
+      description: If installation failed, give the filename you downloaded.
+      placeholder: "For example: SuperBrain-0.3.0-mac-arm64.dmg"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Include the view or action involved and whether you used the fictional demo. Keep all examples synthetic.
+      placeholder: |
+        1. Open the Northstar Studio demo.
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      placeholder: What should happen after those steps?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+      description: Include a short error message or a redacted screenshot if useful. Do not paste private logs.
+    validations:
+      required: true
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - Once so far
+        - I cannot tell yet
+  - type: textarea
+    id: context
+    attributes:
+      label: Anything else that helps reproduce it?
+      description: For example, whether you were in Local mode or whether a model download was interrupted. Do not include connection secrets.

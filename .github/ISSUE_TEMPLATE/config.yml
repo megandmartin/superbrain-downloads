@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Installation and first steps
+    url: https://github.com/megandmartin/superbrain-downloads/blob/main/docs/getting-started.md
+    about: Choose the right preview, check a download and explore the fictional demo.
+  - name: Preview status and known limits
+    url: https://github.com/megandmartin/superbrain-downloads/blob/main/docs/preview-status.md
+    about: Read platform requirements, verification coverage and outstanding release checks.
+  - name: Privacy and local data
+    url: https://github.com/megandmartin/superbrain-downloads/blob/main/docs/privacy-and-data.md
+    about: Understand local storage, optional connections and workspace backups.
