@@ -8,6 +8,7 @@ This history covers public desktop downloads. Documentation and repository impro
 - Added a getting-started walkthrough, local-data and backup guidance, and a platform verification summary.
 - Added focused bug and improvement forms for public preview feedback.
 - Added a versioned release manifest, download integrity verifier and automated repository checks.
+- Added an engineering overview and a reproducible smoke harness for the exact published Mac runtime, with a machine-readable check report and a separate hosted workflow.
 
 These changes improve the public repository. The app downloads remain at **0.3.0-preview.1**.
 

@@ -42,6 +42,18 @@ node scripts/verify-release.mjs --download
 
 This optional check uses the network and downloads the published assets. Passing an integrity check does not prove signing, installation success or product quality. For a single installer, use the [manual checksum instructions](docs/getting-started.md#check-your-download).
 
+## Check the released Mac runtime
+
+On an Apple Silicon Mac, the public smoke harness can exercise the backend packaged in the published DMG. It first verifies that the file matches the release manifest, then runs that exact runtime in a temporary synthetic workspace:
+
+```sh
+node scripts/smoke-preview.mjs \
+  --dmg '/path/to/SuperBrain-0.3.0-mac-arm64.dmg' \
+  --report artifacts/runtime-smoke.json
+```
+
+This executes code from the released installer. It does not install the app or use an existing workspace. Read the [assertions and boundaries](docs/engineering.md) before running it. The [Mac runtime workflow](.github/workflows/mac-preview-smoke.yml) repeats the same check on a hosted Apple Silicon runner when the harness or pinned release changes; it can also be run manually. Repository integrity CI remains a separate check.
+
 ## Distribution and third-party notices
 
 A public download repository does not make the desktop application's source open source. Runtime and model notices are supplied in [THIRD-PARTY-NOTICES.zip](https://github.com/megandmartin/superbrain-downloads/releases/download/v0.3.0-preview.1/THIRD-PARTY-NOTICES.zip) and within the packaged bundles. Preserve those notices when working with release assets.

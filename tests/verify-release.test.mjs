@@ -37,6 +37,8 @@ test('manifest rejects an unsafe destination, ambiguous platforms and malformed 
     ['path traversal filename', value => { value.assets[0].name = '../installer.dmg'; }],
     ['duplicate asset', value => { value.assets.push(structuredClone(value.assets[0])); }],
     ['missing checksum', value => { value.assets = value.assets.filter(asset => asset.kind !== 'checksums'); }],
+    ['missing source revision', value => { delete value.platforms[0].sourceRevision; }],
+    ['abbreviated source revision', value => { value.platforms[0].sourceRevision = 'b975ab7'; }],
     ['invalid digest', value => { value.assets[0].sha256 = 'not-a-hash'; }],
     ['negative bytes', value => { value.assets[0].bytes = -1; }],
     ['unsafe integer size', value => { value.assets[0].bytes = Number.MAX_SAFE_INTEGER + 1; }],

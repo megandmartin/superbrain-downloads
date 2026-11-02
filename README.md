@@ -17,6 +17,8 @@ Bring your company’s knowledge, decisions and priorities into one local deskto
 
 This is the public home for **preview downloads, release notes and feedback**. The app’s development repository is private.
 
+For a technical look, read the [architecture, engineering tradeoffs and reproducible checks](docs/engineering.md). The public tooling distinguishes release integrity from behavior of the actual packaged app.
+
 ## A company desktop, with context
 
 ![Actual SuperBrain Mac preview showing a pricing decision, company goals and files for the fictional Northstar Studio demo company.](assets/desktop.webp)
@@ -81,7 +83,10 @@ Tell us what you were trying to do, what happened and what would have helped. [R
 | --- | --- |
 | What shipped | [Changelog](CHANGELOG.md) |
 | What is verified and what remains open | [Preview status](docs/preview-status.md) |
+| How the app works and why | [Engineering and verification](docs/engineering.md) |
+| Reproduce checks of the released Mac runtime | [Runnable harness](scripts/smoke-preview.mjs) and [recorded result](evidence/macos-runtime.json) |
 | Check download integrity | [Release manifest](releases/preview.json) and [verification guide](CONTRIBUTING.md#release-verification) |
 | Improve these public resources | [Contributing](CONTRIBUTING.md) |
 
 [![Public repository checks](https://github.com/megandmartin/superbrain-downloads/actions/workflows/public-repo-checks.yml/badge.svg)](https://github.com/megandmartin/superbrain-downloads/actions/workflows/public-repo-checks.yml)
+[![Released Mac runtime checks](https://github.com/megandmartin/superbrain-downloads/actions/workflows/mac-preview-smoke.yml/badge.svg)](https://github.com/megandmartin/superbrain-downloads/actions/workflows/mac-preview-smoke.yml)

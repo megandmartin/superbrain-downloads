@@ -9,6 +9,7 @@
   "platforms": [
     {
       "id": "mac-arm64",
+      "sourceRevision": "b975ab71de7bf3335817807537bc01eabe75099e",
       "installer": "SuperBrain-0.3.0-mac-arm64.dmg",
       "requirements": "macOS 14 or later; Apple Silicon M-series Mac",
       "state": "current-preview",
@@ -21,6 +22,7 @@
     },
     {
       "id": "windows-x64",
+      "sourceRevision": "66e59d46739b47b6a88a0305480176020fd56ccd",
       "installer": "SuperBrain-0.3.0-win-x64.exe",
       "requirements": "Windows 10 or 11; Intel or AMD x64 processor",
       "state": "earlier-preview",

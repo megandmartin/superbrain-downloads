@@ -41,6 +41,7 @@ export function validateManifest(manifest) {
     assert.ok(['mac-arm64', 'windows-x64'].includes(platform.id), 'Unexpected platform');
     assert.ok(!platformIds.has(platform.id), `Duplicate platform: ${platform.id}`);
     platformIds.add(platform.id);
+    assert.match(platform.sourceRevision ?? '', /^[a-f0-9]{40}$/, `Missing or invalid source revision: ${platform.id}`);
     assert.ok(manifest.assets.some(asset => asset.name === platform.installer && asset.kind === 'installer'), `Missing installer: ${platform.id}`);
     assert.ok(!installerNames.has(platform.installer), 'Platforms must have different installers');
     installerNames.add(platform.installer);

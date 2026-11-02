@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-11-02T17:57:23.542Z",
+  "status": "passed",
+  "scope": "HTTP contracts of the packaged macOS runtime in a disposable synthetic workspace",
+  "repository": "megandmartin/superbrain-downloads",
+  "releaseTag": "v0.3.0-preview.1",
+  "artifact": {
+    "name": "SuperBrain-0.3.0-mac-arm64.dmg",
+    "bytes": 363836528,
+    "sha256": "73efee466f6ce8bb68822f43d8b5cc9bad1eb05082869d86c1eb594d68989a26"
+  },
+  "build": {
+    "version": "0.3.0",
+    "sourceRevision": "b975ab71de7bf3335817807537bc01eabe75099e",
+    "platform": "darwin",
+    "architecture": "arm64"
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "operatingSystemRelease": "27.0.0",
+    "runnerNode": "v26.12.1",
+    "runtimeNode": "v24.21.0"
+  },
+  "checks": [
+    {
+      "id": "launch-auth-required",
+      "description": "Requests without the launch secret are rejected",
+      "status": "passed"
+    },
+    {
+      "id": "launch-auth-invalid",
+      "description": "An incorrect launch secret is rejected",
+      "status": "passed"
+    },
+    {
+      "id": "owner-session-required",
+      "description": "A launch secret alone does not create an owner session",
+      "status": "passed"
+    },
+    {
+      "id": "cross-origin-rejected",
+      "description": "A cross-origin owner-session request is rejected",
+      "status": "passed"
+    },
+    {
+      "id": "owner-cookie-flags",
+      "description": "The owner session cookie is HttpOnly and SameSite Strict",
+      "status": "passed"
+    },
+    {
+      "id": "privacy-default-local",
+      "description": "A fresh isolated workspace starts in Local mode",
+      "status": "passed"
+    },
+    {
+      "id": "fictional-demo",
+      "description": "The fictional demo loads without provider credentials",
+      "status": "passed"
+    },
+    {
+      "id": "connected-acknowledgement",
+      "description": "Connected mode is refused without explicit acknowledgement",
+      "status": "passed"
+    },
+    {
+      "id": "external-client-blocked",
+      "description": "Local mode rejects the external-client test action",
+      "status": "passed"
+    },
+    {
+      "id": "synthetic-company-create",
+      "description": "A disposable synthetic company can be created",
+      "status": "passed"
+    },
+    {
+      "id": "synthetic-record-save",
+      "description": "A synthetic record can be saved in that company",
+      "status": "passed"
+    },
+    {
+      "id": "local-source-recall",
+      "description": "Local recall returns the saved synthetic source",
+      "status": "passed"
+    },
+    {
+      "id": "session-restart-expiry",
+      "description": "The previous owner session is invalid after restart",
+      "status": "passed"
+    },
+    {
+      "id": "record-restart-persistence",
+      "description": "The synthetic source survives a clean runtime restart",
+      "status": "passed"
+    },
+    {
+      "id": "privacy-restart-local",
+      "description": "The isolated workspace remains in Local mode after restart",
+      "status": "passed"
+    }
+  ],
+  "notTested": [
+    "Native Electron interface, installation/uninstallation and operating-system trust prompts",
+    "Local model download, generated-answer quality, performance and physical microphone input",
+    "Windows or Intel Mac execution, connected provider workflows and multi-user behavior",
+    "System-wide network isolation, a comprehensive security audit or real-world customer validation"
+  ]
+}

@@ -1,0 +1,59 @@
+name: Released Mac runtime checks
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - scripts/smoke-preview.mjs
+      - scripts/verify-release.mjs
+      - tests/smoke-preview.test.mjs
+      - releases/preview.json
+      - .github/workflows/mac-preview-smoke.yml
+  pull_request:
+    paths:
+      - scripts/smoke-preview.mjs
+      - scripts/verify-release.mjs
+      - tests/smoke-preview.test.mjs
+      - releases/preview.json
+      - .github/workflows/mac-preview-smoke.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mac-preview-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  released-runtime:
+    name: Check the published Apple Silicon runtime
+    runs-on: macos-15
+    timeout-minutes: 12
+    steps:
+      - name: Check out the public harness
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Use Node.js for the harness
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - name: Check harness and manifest failure cases
+        run: node --test tests/*.test.mjs
+      - name: Download the pinned public preview
+        shell: bash
+        run: |
+          DOWNLOAD_URL="$(node --input-type=module -e 'import fs from "node:fs"; const m = JSON.parse(fs.readFileSync("releases/preview.json")); const p = m.platforms.find(p => p.id === "mac-arm64"); console.log(m.assets.find(a => a.name === p.installer).url);')"
+          curl --fail --location --retry 2 --max-time 240 "$DOWNLOAD_URL" --output "$RUNNER_TEMP/SuperBrain-preview.dmg"
+      - name: Verify bytes and exercise the isolated released runtime
+        run: node scripts/smoke-preview.mjs --dmg "$RUNNER_TEMP/SuperBrain-preview.dmg" --report artifacts/runtime-smoke.json
+      - name: Retain the runtime check report
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: released-mac-runtime-report
+          path: artifacts/runtime-smoke.json
+          retention-days: 30
+          if-no-files-found: warn
