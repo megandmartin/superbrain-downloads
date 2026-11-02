@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "repository": "megandmartin/superbrain-downloads",
+  "channel": "preview",
+  "tag": "v0.3.0-preview.1",
+  "prerelease": true,
+  "publishedAt": "2026-10-29T10:56:10Z",
+  "releaseUrl": "https://github.com/megandmartin/superbrain-downloads/releases/tag/v0.3.0-preview.1",
+  "platforms": [
+    {
+      "id": "mac-arm64",
+      "installer": "SuperBrain-0.3.0-mac-arm64.dmg",
+      "requirements": "macOS 14 or later; Apple Silicon M-series Mac",
+      "state": "current-preview",
+      "distributionSigned": false,
+      "verification": "Actual Apple Silicon app checked, including local generated answers on synthetic company records.",
+      "limits": [
+        "Ad-hoc signature only; no Apple Developer ID signing or notarization.",
+        "Intel Macs are not supported."
+      ]
+    },
+    {
+      "id": "windows-x64",
+      "installer": "SuperBrain-0.3.0-win-x64.exe",
+      "requirements": "Windows 10 or 11; Intel or AMD x64 processor",
+      "state": "earlier-preview",
+      "distributionSigned": false,
+      "verification": "Packaged runtime checks passed; full installation, uninstallation, local generation and physical microphone checks remain pending.",
+      "limits": [
+        "No publisher signing. Windows ARM is not validated.",
+        "Predates the Mac model-download resume and structured-answer retrieval fixes."
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "name": "SuperBrain-0.3.0-mac-arm64.dmg",
+      "kind": "installer",
+      "bytes": 363836528,
+      "sha256": "73efee466f6ce8bb68822f43d8b5cc9bad1eb05082869d86c1eb594d68989a26",
+      "url": "https://github.com/megandmartin/superbrain-downloads/releases/download/v0.3.0-preview.1/SuperBrain-0.3.0-mac-arm64.dmg"
+    },
+    {
+      "name": "SuperBrain-0.3.0-win-x64.exe",
+      "kind": "installer",
+      "bytes": 309601941,
+      "sha256": "333356cb356ed0149596c8cff0bf9e87098e6a63ba946dea5b69f8ceb0269cab",
+      "url": "https://github.com/megandmartin/superbrain-downloads/releases/download/v0.3.0-preview.1/SuperBrain-0.3.0-win-x64.exe"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "kind": "checksums",
+      "bytes": 282,
+      "sha256": "4992faa07960c43e7179edd06ff7fa33e01416c2c82000e9eba3d7d8ce6d4d45",
+      "url": "https://github.com/megandmartin/superbrain-downloads/releases/download/v0.3.0-preview.1/SHA256SUMS.txt"
+    },
+    {
+      "name": "THIRD-PARTY-NOTICES.zip",
+      "kind": "notices",
+      "bytes": 2108124,
+      "sha256": "e3ce753f5e8c4b241c3ef19ec4d676b1aec5104120cd1945488f47286ff75d39",
+      "url": "https://github.com/megandmartin/superbrain-downloads/releases/download/v0.3.0-preview.1/THIRD-PARTY-NOTICES.zip"
+    }
+  ]
+}
