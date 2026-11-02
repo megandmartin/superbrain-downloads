@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "recordedAt": "2026-11-02T17:57:23.542Z",
+  "recordedAt": "2026-11-02T17:59:12.710Z",
   "status": "passed",
   "scope": "HTTP contracts of the packaged macOS runtime in a disposable synthetic workspace",
   "repository": "megandmartin/superbrain-downloads",
@@ -19,8 +19,8 @@
   "environment": {
     "platform": "darwin",
     "architecture": "arm64",
-    "operatingSystemRelease": "27.0.0",
-    "runnerNode": "v26.12.1",
+    "operatingSystemRelease": "24.6.0",
+    "runnerNode": "v24.22.1",
     "runtimeNode": "v24.21.0"
   },
   "checks": [

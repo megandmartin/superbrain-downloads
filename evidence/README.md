@@ -2,6 +2,8 @@
 
 [macos-runtime.json](macos-runtime.json) records a run of the [public smoke harness](../scripts/smoke-preview.mjs) against the published `v0.3.0-preview.1` Apple Silicon installer. Its artifact hash, build revision, environment and individual assertions are included in the JSON.
 
+The file is the unmodified report from [GitHub-hosted run 41496196292](https://github.com/megandmartin/superbrain-downloads/actions/runs/41496196292), using harness commit [`e5a0588`](https://github.com/megandmartin/superbrain-downloads/commit/e5a05889dd8dfdc182d6910d2c307ac28c9066d2). That run downloaded the public installer, verified its complete bytes and passed all 15 runtime assertions on an Apple Silicon runner. The report also records the bundled and harness Node.js versions.
+
 The run uses a new synthetic company and temporary workspace. It checks launch and session boundaries, Local mode defaults, source save/recall and persistence across a runtime restart. It does not use a real company workspace or provider credentials.
 
 This is a recorded result, not an independent audit or a general product-quality benchmark. The [engineering guide](../docs/engineering.md) explains the architecture, tradeoffs, exact command and verification boundaries. The [separate Mac runtime workflow](../.github/workflows/mac-preview-smoke.yml) repeats the check on a hosted runner and retains its report with each run.

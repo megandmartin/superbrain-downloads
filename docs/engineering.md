@@ -43,7 +43,7 @@ Local mode is the default service policy. Cloud calls, connectors and external M
 | [Release manifest](../releases/preview.json) | The specific published asset identities and platform disclosures used by the tools. | That an installer is signed, safe for every device, or useful to a customer. |
 | [Mac runtime result](../evidence/macos-runtime.json) and [runnable harness](../scripts/smoke-preview.mjs) | Named HTTP-level assertions against the runtime inside the checksum-matched Mac installer, using temporary synthetic data. | Native GUI operation, a fresh installation, Windows parity, local model-answer accuracy or physical microphone behavior. |
 
-The runtime report is a recorded local run, not an independent audit. The [Mac runtime workflow](../.github/workflows/mac-preview-smoke.yml) repeats the assertions on a hosted runner and retains its report. The public script makes the assertions inspectable; rerunning it gives stronger evidence than the checked-in report alone. Read the individual results and scope rather than inferring application coverage from a total test count.
+The checked-in runtime report comes from [hosted run 41496196292](https://github.com/megandmartin/superbrain-downloads/actions/runs/41496196292), which downloaded the public DMG, verified its complete bytes and passed all 15 assertions. This is a reproducible maintainer check, not an independent audit. The [Mac runtime workflow](../.github/workflows/mac-preview-smoke.yml) can repeat the run and retains its report. Read the individual assertions and scope rather than inferring application coverage from a total test count.
 
 ## Repeat the Mac runtime check
 
