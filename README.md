@@ -11,6 +11,8 @@
   <a href="https://github.com/megandmartin/superbrain-downloads/issues/new/choose">Give feedback</a>
 </p>
 
+> SuperBrain's company-memory core also powers [startupxOS](https://www.startupxos.com), the AI operating system for startups.
+
 # SuperBrain
 
 Bring your company’s knowledge, decisions and priorities into one local desktop. Find the context behind a decision, ask questions of your company records, and see what needs your attention.
